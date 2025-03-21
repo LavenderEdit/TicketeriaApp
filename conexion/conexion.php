@@ -24,18 +24,12 @@ class Database{
 
         return $this->conn;
     }
-
-    public function closeConnection() {
-        $this->conn = null;
-    }
 }
 
-$host = "";
+$host = "localhost";
 $db_name = "";
-$username = "";
+$username = "root";
 $password = "";
 
 $database = new Database($host, $db_name, $username, $password);
 $db = $database->getConnection();
-
-$database->closeConnection();
