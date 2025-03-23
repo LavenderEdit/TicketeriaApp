@@ -1,0 +1,51 @@
+.sinCopiar {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.negrita {
+    font-weight: bolder;
+}
+
+.escondido {
+    display: none !important;
+}
+
+.activo {
+    display: block;
+}
+
+.activo-resultados {
+    opacity: 1;
+    visibility: visible;
+}
+
+.activo-overlay {
+    display: flex;
+}
+
+.dirFlexCol {
+    flex-direction: column;
+}
+
+.dirFlexRow {
+    flex-direction: row;
+}
+
+.textAlignCenter {
+    text-align: center;
+}
+
+.textAlignJustified {
+    text-align: justify;
+}
+
+.textAlignRight {
+    text-align: right;
+}
+
+.textAlignLeft {
+    text-align: left;
+}
