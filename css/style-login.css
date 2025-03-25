@@ -3,6 +3,7 @@
     Author     : Lavender, Andriy, Vidal
 */
 @import url('./style-global-classes.css');
+@import url('./style_responsive.css');
 
 body {
     background-size: cover;
@@ -15,7 +16,7 @@ body {
 }
 
 /* =======================
-     Sección formulario (IZQUIERDA)
+    Sección formulario (IZQUIERDA)
      ======================= */
 #iniciosesion {
     position: absolute;
@@ -137,7 +138,7 @@ input::placeholder {
 }
 
 /* =======================
-   Sección azul (DERECHA)
+Sección azul (DERECHA)
    ======================= */
 #opacidadAzul {
     position: absolute;
@@ -180,4 +181,37 @@ input::placeholder {
 #robotImage {
     width: 125px;
     height: auto;
+}
+
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    #iniciosesion {
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .entradaLogin, #btnIniciar {
+        width: 100%;
+    }
+
+    #opacidadAzul {
+        display: none;
+    }
+}
+
+/* Media query para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    #logoempresa {
+        width: 150px;
+    }
+
+    .textoentrada {
+        width: 100%;
+    }
+
+    #btnMostrarContra {
+        right: 5px;
+    }
 }

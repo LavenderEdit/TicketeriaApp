@@ -1,0 +1,33 @@
+
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    #iniciosesion {
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .entradaLogin, #btnIniciar {
+        width: 100%;
+    }
+
+    #opacidadAzul {
+        display: none;
+    }
+}
+
+/* Media query para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    #logoempresa {
+        width: 150px;
+    }
+
+    .textoentrada {
+        width: 100%;
+    }
+
+    #btnMostrarContra {
+        right: 5px;
+    }
+}

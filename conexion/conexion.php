@@ -33,3 +33,5 @@ $password = "";
 
 $database = new Database($host, $db_name, $username, $password);
 $db = $database->getConnection();
+//esto lo hizo david
+
