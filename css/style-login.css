@@ -86,17 +86,17 @@ input::placeholder {
     width: 350px;
     height: 40px;
     margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 33px 8px;
     border: 0;
     font-weight: bold;
     color: white;
-    background-color: rgba(39, 100, 184, 1);
+    background: #1D71D9;
     cursor: pointer;
     transition: all 0.3s ease-in;
 }
 
 #btnIniciar:hover {
-    background-color: #1e0bd0;
+    background-color: #1D5AB3;
 }
 
 /* Link de recuperar contraseña */
