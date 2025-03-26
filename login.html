@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/style-login.css">
     <link rel="icon" href="./recursos/iconos/icon-robot.webp" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/2185a48098.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -18,27 +19,27 @@
             <img src="./recursos/logos/icon-logo.webp" alt="logo_keyfacil" id="logoempresa">
         </div>
         <form action="login.php" id="formLogin" method="POST">
-            <div class="entradaLogin">
-                <input type="email" class="textoentrada" id="correo" name="correo" placeholder="Usuario" required>
+            <div class="entradaLogin label-bonito">
+                <div class="icono-font">
+                    <i class="fa-solid fa-user"></i>
+                    <label for="correo">Usuario</label>
+                </div>
+                <input type="email" class="textoentrada inpt-global-style" id="correo" name="correo"
+                    placeholder="Usuario" required>
             </div>
-            <div class="entradaLogin" id="entradaContra">
-                <input type="password" class="textoentrada" id="contra" name="contra" placeholder="Contraseña"
-                    minlength="6" maxlength="12" pattern=".{6,12}" required>
-                <button type="button" id="btnMostrarContra">
-                    <svg id="iconoOjoAbierto" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                        viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" style="display: block;">
-                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
-                        <circle cx="12" cy="12" r="3"></circle>
-                    </svg>
-                    <svg id="iconoOjoCerrado" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                        viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" style="display: none;">
-                        <path d="M17.94 17.94A10.5 10.5 0 0 1 12 19.5a10.5 10.5 0 0 1-7.93-3.64M3 3l18 18"></path>
-                        <path d="M10.66 10.66A3 3 0 0 0 13.34 13.34"></path>
-                        <path d="M15.66 8.34A10.5 10.5 0 0 0 12 4.5a10.5 10.5 0 0 0-7.93 3.64"></path>
-                    </svg>
-                </button>
+            <div class="entradaLogin label-bonito" id="entradaContra">
+                <div class="icono-font">
+                    <i class="fa-solid fa-lock"></i>
+                    <label for="contra">Contraseña</label>
+                </div>
+                <div class="pwd-container">
+                    <input type="password" class="textoentrada inpt-global-style contraClass" id="contra" name="contra"
+                        placeholder="Contraseña" minlength="6" maxlength="12" pattern=".{6,12}" required>
+                    <button type="button" id="btnMostrarContra" class="btn-show-container">
+                        <i class="fa-regular fa-eye iconoOjoAbierto"></i>
+                        <i style="display: none;" class="fa-regular fa-eye-slash iconoOjoCerrado"></i>
+                    </button>
+                </div>
             </div>
             <button type="submit" id="btnIniciar">
                 Iniciar Sesión
@@ -128,6 +129,8 @@
             </div>
         </div>
     </div>
+
+    <script type="module" src="./js/script.js"></script>
 </body>
 
 </html>
