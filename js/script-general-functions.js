@@ -127,3 +127,30 @@ export function uploadDataUser() {
       showModal("errorModal", "Error al subir la imagen: " + err.message);
     });
 }
+
+export function togglePassword() {
+  const btnMostrarContraList = document.querySelectorAll(".btn-show-container");
+
+  btnMostrarContraList.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const parent = btn.closest(".pwd-container");
+      if (parent) {
+        const inputContra = parent.querySelector(".contraClass");
+        const iconoOjoAbierto = parent.querySelector(".iconoOjoAbierto");
+        const iconoOjoCerrado = parent.querySelector(".iconoOjoCerrado");
+
+        if (inputContra && iconoOjoAbierto && iconoOjoCerrado) {
+          if (inputContra.type === "password") {
+            inputContra.type = "text";
+            iconoOjoAbierto.style.display = "none";
+            iconoOjoCerrado.style.display = "block";
+          } else {
+            inputContra.type = "password";
+            iconoOjoAbierto.style.display = "block";
+            iconoOjoCerrado.style.display = "none";
+          }
+        }
+      }
+    });
+  });
+}
