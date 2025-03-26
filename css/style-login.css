@@ -49,17 +49,17 @@
 /* Botón de iniciar sesión */
 #btnIniciar {
     margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 33px 8px;
     border: 0;
     font-weight: bold;
     color: white;
-    background-color: rgba(39, 100, 184, 1);
+    background: #1D71D9;
     cursor: pointer;
     transition: all 0.3s ease-in;
 }
 
 #btnIniciar:hover {
-    background-color: #1e0bd0;
+    background-color: #1D5AB3;
 }
 
 /* Link de recuperar contraseña */
@@ -129,4 +129,37 @@
 /* Imagen del robot */
 #robotImage {
     height: auto;
+}
+
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    #iniciosesion {
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .entradaLogin, #btnIniciar {
+        width: 100%;
+    }
+
+    #opacidadAzul {
+        display: none;
+    }
+}
+
+/* Media query para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    #logoempresa {
+        width: 150px;
+    }
+
+    .textoentrada {
+        width: 100%;
+    }
+
+    #btnMostrarContra {
+        right: 5px;
+    }
 }
