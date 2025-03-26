@@ -56,6 +56,7 @@ CREATE TABLE CompraDetalle (
     componente VARCHAR(100) NOT NULL,
     cantidad INT NOT NULL,
     precio DECIMAL(10,2) NOT NULL,
+    foto BLOB, 
     FOREIGN KEY (compra_id) REFERENCES Compra(id) ON DELETE CASCADE
 );
 
