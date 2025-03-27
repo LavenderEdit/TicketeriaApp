@@ -12,16 +12,6 @@ CREATE TABLE TipoUsuario (
     descripcion TEXT
 );
 
--- Inserción de datos de ejemplo en TipoUsuario
-INSERT INTO TipoUsuario (tipo_primario, tipo_secundario, descripcion)
-VALUES 
-('Empresa', 'proveedor', 'Empresa que provee servicios o productos.'),
-('Empresa', 'cliente', 'Empresa que utiliza servicios o productos.'),
-('Administrador', 'general', 'Administrador con funciones generales del sistema.'),
-('Administrador', 'cliente', 'Administrador orientado a clientes.'),
-('Cliente', 'técnico', 'Técnico enfocado en mantenimiento.'),
-('Cliente', 'comprador', 'Cliente que realiza compras.');
-
 -------------------------------------------------------
 -- Tabla Usuario: unifica Empresa, Administrador y Técnico.
 -------------------------------------------------------
@@ -30,8 +20,9 @@ CREATE TABLE Usuario (
     nombre VARCHAR(100) NOT NULL,
     telefono VARCHAR(20),
     email VARCHAR(100) UNIQUE NOT NULL,
-    login VARCHAR(50) UNIQUE,
+    fecha_logeo DATETIME,
     contrasena VARCHAR(255) NOT NULL,
+    foto LONGBLOB,
     tipo_usuario_id INT,
     FOREIGN KEY (tipo_usuario_id) REFERENCES TipoUsuario(id) ON DELETE SET NULL
 );
@@ -56,7 +47,6 @@ CREATE TABLE CompraDetalle (
     componente VARCHAR(100) NOT NULL,
     cantidad INT NOT NULL,
     precio DECIMAL(10,2) NOT NULL,
-    foto BLOB, 
     FOREIGN KEY (compra_id) REFERENCES Compra(id) ON DELETE CASCADE
 );
 
