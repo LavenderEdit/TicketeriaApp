@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style_AC.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" />
+    <script src="/js/funciones_AC.js" defer></script>
+</head>
+
+<body>
+    <!--- Barra Lateral-->
+    <div class="fisrt_body" id="bar_visible">
+        <nav>
+            <ul>
+                <li id="link_dashboard" class="li active"><a href="#"><i class="fa-solid fa-house icon_bar"></i>Dashboard</a></li>
+                <li id="link_tickets"><a href="#"><i class="fa-solid fa-check icon_bar"></i>Mis Tickets</a></li>
+                <li><a href="#"><i class="fa-solid fa-gear icon_bar"></i>Configuracion</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!--- Contenedor Body-->
+    <div class="second_body" id="main_content">
+        <header>
+            <div class="header">
+                <!---Icono Barra Lateral: Hamburguesa-->
+                <button id="showButton" class="boton_bar"><i class="fa-solid fa-bars"></i></button> 
+                <!---Icono Usuario: contenido del usuario-->
+                <div class="header_content-user">
+                    <button type="button" class="boton_user">A</button>
+                    <!---Modal Usuario-->
+                    <div class="header_content-user_data">
+                        <div class="header_content-user_data_pfp">
+                            <button type="button" id="#" class="boton_user_config boton_user_edit">A</button>
+                        </div>
+                        <div class="header_content-user_data_datos">
+                            <p>Alexander:v</p>
+                            <span><p>Example@gmail.com</p></span>
+                        </div>
+                        <div class="header_content-user_data_position"> 
+                            <p>Administrador Cliente</p>
+                        </div>
+                        <div class="header_content-user_data_configuracion">
+                            <button type="button" class="boton_1"><i class="fa-solid fa-gear profile_icon_config"></i> Configuracion</button>
+                            <button type="button" class="boton_2"><i class="fa-solid fa-right-from-bracket profile_icon_config"></i> Cerrar Session</button>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </header>
+
+        <main>
+            <div class="main" id="content_barra-lateral"></div> <!--- contenido barra-->
+        </main>
+        <footer></footer>
+    </div>
+
+    <!-- Modal de edición -->
+    <div class="emergent">
+        <div class="overlay_emergent"></div>
+        <div class="box_emergent" id="content_edition">
+            <div class="box_emergent_content">
+                <h1>EDITAR TICKET</h1>
+                <div class="box_emergent_content-imput">
+                    <div class="box_emergent_content-imput_text">
+                        <div class="box_emergent_content-imput_text_codigo">
+                            <p>Nombre del ticket:</p>
+                            <input type="text" name="nombre" id="#" placeholder="Codigo de Ticket">
+                        </div>
+                        <div class="box_emergent_content-imput_text_fecha">
+                            <p>Fecha</p>
+                            <input type="date" name="fecha">
+                        </div>
+                        <div class="box_emergent_content-imput_text_estatus">
+                            <p>Estatus</p>
+                            <select name="status">
+                                <option>option1</option>
+                                <option>option2</option>
+                                <option>option3</option>
+                            </select>
+                        </div>
+                        <div class="box_emergent_content-imput_text_descripcion">
+                            <p>Descripcion</p>
+                            <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí..."></textarea>
+                        </div>
+                    </div>
+                    <div class="box_emergent_content-imput_button">
+                        <div class="box_emergent_content-imput_button_content">
+                            <button type="button" id="btn_cancelar">Cancelar</button>
+                            <button type="button" id="btn_aceptar">Actualizar</button>
+                        </div>        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
