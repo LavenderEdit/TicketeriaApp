@@ -1,0 +1,698 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat";
+    pointer-events: auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    width: 100vw;
+    font-family: 'ABeeZee';
+    position: relative;
+    justify-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.fisrt_body {
+    justify-items: center;
+    align-content: center;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: #1D5AB3;
+    z-index: 1000;
+    transition: left 0.3s ease;
+}
+
+nav {
+    width: 100%;
+    justify-items: center;
+    height: 80%;
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+}
+
+nav ul li {
+    width: 100%;
+    margin: 10px 0;
+    padding: 8% 8%;
+    display: block;
+}
+
+nav ul li.active,
+nav ul li:hover {
+    /*triangulo:v*/
+    cursor: pointer;
+    background-color: #ffffff;
+
+    & a {
+        color: #1D5AB3;
+    }
+}
+
+nav ul li.active a,
+nav ul li:hover a {
+    transform: translateX(20%);
+    transition: transform .4s ease;
+}
+
+nav ul li a {
+    color: white;
+    display: inline-block;
+}
+
+.boton_user_config {
+    border-radius: 100%;
+    width: 3em;
+    height: 3em;
+    border: 1px solid #d3d3d3;
+    cursor: pointer;
+}
+
+.icon_bar {
+    padding-right: 20px;
+}
+
+.boton_user {
+    border-radius: 100%;
+    width: 3em;
+    height: 3em;
+    border: 1px solid #d3d3d3;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+
+.boton_user.select::after {
+    top: -25%;
+    left: -25%;
+    position: absolute;
+    content: '';
+    border: 0.7em solid #1a1a1a12;
+    z-index: 0;
+    border-radius: 100%;
+    width: 3em;
+    height: 3em;
+}
+
+
+.header_content-user {
+    position: relative;
+}
+
+.header_content-user_data_datos {
+    margin: 5% 0;
+    font-size: 1em;
+}
+
+.header_content-user_data_datos span {
+    color: #b8b8b8;
+    text-decoration: underline;
+}
+
+.header_content-user_data_position {
+    font-size: 0.8em;
+    white-space: nowrap;
+    color: #595959;
+    border-bottom: 2px dashed #d0d0d0;
+    padding-bottom: 1.5em;
+    width: 75%;
+    margin: 0 auto;
+}
+
+
+.header_content-user_data_configuracion {
+    display: flex;
+    flex-direction: column;
+}
+
+.header_content-user_data_configuracion button {
+    margin-top: 5%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.header_content-user_data_configuracion button.boton_1 {
+    color: #1D5AB3;
+}
+
+.header_content-user_data_configuracion button.boton_2 {
+    color: red;
+}
+
+
+.header_content-user_data {
+    position: absolute;
+    top: 120%;
+    right: -60%;
+    background-color: white;
+    padding: 1.5em 0;
+    z-index: 100;
+    border: 1px solid #989898;
+    border-radius: 5px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.284);
+    visibility: hidden;
+    opacity: 0;
+    min-width: 18vw;
+}
+
+.header_content-user_data.select {
+    visibility: visible;
+    opacity: 1;
+}
+
+.second_body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    transition: transform 0.3s ease, width 0.3s ease;
+}
+
+header {
+    background-color: white;
+    justify-items: center;
+}
+
+.header {
+    width: 96%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.7em 1.5em;
+}
+
+.second_body #showButton {
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 1.8em;
+    transform: scaleX(1.8);
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+
+
+
+/*-----------   main    */
+
+main {
+    padding: 20px;
+    background-color: #D7D6D6;
+    height: 100%;
+    justify-items: center;
+}
+
+
+
+.main {
+    justify-items: center;
+    align-content: center;
+    background-color: white;
+    width: 95%;
+    height: 95%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/*dc*/
+.Dashboard-content-main {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    height: 90%;
+    width: 95%;
+}
+
+.Dashboard_list-button {
+    width: 90%;
+    justify-items: start;
+}
+
+.Dashboard_list-button button {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: #5F5F5F;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5% 9%;
+    text-align: start;
+    background-color: transparent;
+    border: 1px solid #989898;
+}
+
+.Dashboard_list-button button:hover {
+    background-color: #D9D9D9;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.Dashboard_list-button button.active {
+    background-color: #D9D9D9;
+
+    & .icon_list_button {
+        transform: rotate(180deg);
+    }
+}
+
+/*  arreglar :v*/
+/* ---------------------------------*/
+.Dashboard_content_list-button {
+    background-color: #D9D9D9;
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    justify-items: center;
+    border-radius: 5px;
+}
+
+.Dashboard_conteinder_content_list-button {
+    width: 90%;
+    height: 90%;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.file-dashborad-tickets {
+    height: 60vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* ---------------------------------  Diseño de Scroll (Contenido Ticket)  */
+
+/* Personalizar el thumb (parte movil del scrollbar) */
+.file-dashborad-tickets::-webkit-scrollbar-thumb {
+    background-color: #1D5AB3;
+    border-radius: 10px;
+}
+
+/* Personalizar el tamaño del scrollbar */
+.file-dashborad-tickets::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Cuando haya un scroll visible, aplica un padding-right para mover el contenido */
+.file-dashborad-tickets::-webkit-scrollbar-thumb:vertical {
+    background-color: #1D5AB3;
+}
+
+/* Detecta si hay scroll y aplica el padding-right para mover el contenido */
+.file-dashborad-tickets {
+    padding-right: 0;
+}
+
+.file-dashborad-tickets::-webkit-scrollbar {
+    width: 8px;
+}
+
+.file-dashborad-tickets::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+/* Si el contenido desborda (hay scroll), agrega el padding para mover el contenido */
+.file-dashborad-tickets::-webkit-scrollbar-thumb {
+    background-color: #1D5AB3;
+    border-radius: 10px;
+}
+
+.file-dashborad-tickets {
+    padding-right: 10px;
+    /* Esto mueve el contenido a la izquierda */
+}
+
+/* --------------------------------------------------------------------------------------*/
+
+/*titulo sucursales/ticket*/
+.file-dashboard-tickets_titulo,
+.file-dashboard-sucursales_titulo {
+    font-size: 1.3em;
+    padding-bottom: 2%;
+
+    & h1 {
+        font-family: "ABeeZee";
+        font-weight: 400;
+    }
+}
+
+
+
+.file-dashboard-tickets_container {
+    background-color: white;
+    justify-items: center;
+    margin-bottom: 3%;
+}
+
+/**/
+.file-dashboard-tickets_title-container {
+    width: 95%;
+}
+
+.file-dashboard-tickets_title {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.file-dashboard-tickets_title_text {
+    width: 50%;
+    display: flex;
+    align-content: center;
+    font-family: "Montserrat";
+    font-size: 0.9em;
+
+    & span {
+        padding-left: 1%;
+        color: #6a6a6a;
+        font-family: "Montserrat";
+        font-size: 1em;
+    }
+}
+
+
+.file-dashboard-tickets_title_botton button {
+    padding: 5px;
+    text-align: center;
+    align-items: center;
+}
+
+.file-dashboard-tickets_title_botton button:hover {
+    cursor: pointer;
+}
+
+.icon-ticket_file-dashboard {
+    font-size: 1.2em;
+}
+
+/*botones alterar colores*/
+.Btn_editar,
+.Btn_show {
+    border: none;
+    background: transparent;
+    font-size: 1em;
+    padding: 5px 10px;
+    transition: transform 0.3s ease;
+}
+
+.Btn_editar:focus {
+    color: #1D5AB3;
+}
+
+.Btn_show.show {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+    color: #1D5AB3;
+}
+
+.file-dashboard-tickets_text-container {
+    width: 95%;
+    overflow: hidden;
+}
+
+.file-dashboard-tickets_text {
+    transition: opacity 0.3s ease, height 0.3s ease, padding 0.3s ease;
+    overflow: hidden;
+    opacity: 0;
+    height: 0;
+    font-size: 0.8em;
+}
+
+.file-dashboard-tickets_text.show {
+    padding: 20px;
+    opacity: 1;
+    height: auto;
+    border-top: 2px solid #E8DEF8;
+}
+
+
+
+/*  Modal: Venatana*/
+.emergent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    font-family: "Montserrat";
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 2000;
+}
+
+.emergent.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.overlay_emergent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.box_emergent {
+    width: min(30%);
+    height: auto;
+    position: relative;
+    background-color: white;
+    padding: 1% 3%;
+    border-radius: 15px;
+    z-index: 2001;
+}
+
+.body_locked {
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.body_locked .emergent {
+    pointer-events: auto;
+}
+
+
+.box_emergent h1 {
+    text-align: center;
+    font-size: 1.5em;
+    text-decoration: underline;
+    margin-bottom: 5%;
+}
+
+.box_emergent_content-imput_text p {
+    font-size: 1em;
+    margin-bottom: 2%;
+}
+
+.box_emergent_content-imput_text select,
+.box_emergent_content-imput_text option,
+.box_emergent_content-imput_text textarea,
+.box_emergent_content-imput_text input {
+    width: 100%;
+    padding: 2% 3%;
+    outline: none;
+    font-size: 0.8em;
+    font-family: "Montserrat";
+    margin-bottom: 5%;
+}
+
+textarea {
+    resize: none;
+    min-height: 120px;
+}
+
+.box_emergent_content-imput_button {
+    display: flex;
+    justify-content: end;
+}
+
+.box_emergent_content-imput_button_content button {
+    padding: 3% 20px;
+    color: white;
+    cursor: pointer;
+}
+
+#btn_cancelar {
+    background-color: #ff0000;
+    border: 1px solid #a40000;
+
+    &:hover {
+        background-color: #ff5151;
+    }
+}
+
+#btn_aceptar {
+    background-color: #1D5AB3;
+    border: 1px solid #00388b;
+
+    &:hover {
+        background-color: #589bff;
+    }
+}
+
+/*sucursales*/
+.file-dashboard-sucursales_container {
+    background-color: white;
+    height: 100%;
+    padding: 3%;
+    border-radius: 5px;
+}
+
+
+.file-dashboard-sucursales_container_first-row {
+    align-items: center;
+    width: 100%;
+    display: flex;
+    padding-bottom: 3%;
+    justify-content: space-between;
+    border-bottom: 2px solid #E8DEF8;
+}
+
+.file-dashboard-sucursales_container_first-row_search input {
+    border: 1px solid #989898;
+    border-radius: 5px;
+    padding: 0.6em 1.3em;
+    outline: none;
+}
+
+
+.file-dashboard-sucursales_container_second-row {
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.file-dashboard-sucursales_container_second-Content {
+    width: 100%;
+}
+
+.file-dashboard-sucursales_container_second-row_container {
+    display: flex;
+    width: 100%;
+}
+
+.file-dashboard-sucursales_container_second-row_container_buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    width: 100%;
+    justify-items: start;
+    align-items: center;
+    max-height: 40vh;
+    overflow-y: auto;
+}
+
+.file-dashboard-sucursales_container_second-row_container_buttons button {
+    min-width: 100%;
+    padding: 1.3em 1.3em;
+    text-align: left;
+    font-size: 0.7em;
+    outline: none;
+    border: 1px solid #989898;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.file-dashboard-sucursales_container_second-row_container_buttons button:hover {
+    background-color: #1D5AB3;
+    color: white;
+    cursor: pointer;
+    border: 1px solid #144999;
+}
+
+/*  Mis sucursales */
+.tickets-content-main {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    height: 90%;
+    width: 95%;
+}
+
+.tickets_first-row,
+.tickets_second-row,
+.tickets_third-row {
+    display: flex;
+}
+
+.tickets_second-row_icons {
+    padding-right: 10px;
+}
+
+.tickets_first-row,
+.tickets_second-row {
+    border-bottom: 2px solid #E8DEF8;
+}
+
+/*linea separadora*/
+.tickets_third-row {
+    align-items: end;
+}
+
+.tickets_third-row_content-data {
+    background-color: #D7D6D6;
+    width: 100%;
+    height: 95%;
+    border-radius: 5px;
+    /*Contenido equis de :vvvvv (borrable) ->*/
+    align-content: center;
+}
+
+
+.tickets_first-row button,
+.tickets_second-row button {
+    padding: 1% 2%;
+    margin: .9em 2%;
+    border-radius: 5px;
+    border: 1px solid #989898;
+    color: #989898;
+    outline: none;
+}
+
+.tickets_first-row button:focus,
+.tickets_second-row button:focus {
+    background-color: #1D5AB3;
+    color: white;
+    border: 1px solid #144999;
+}
+
+.tickets_first-row .tickets_first-conteiner_buttton-select,
+.tickets_second-row .tickets_second-conteiner_buttton-select {
+    background-color: #1D5AB3;
+    color: white;
+    border: 1px solid #144999;
+}
+
+/*  Pruebas */

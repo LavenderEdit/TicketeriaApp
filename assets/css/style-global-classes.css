@@ -1,0 +1,92 @@
+.sinCopiar {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.negrita {
+    font-weight: bolder;
+}
+
+.escondido {
+    display: none !important;
+}
+
+.activo {
+    display: block;
+}
+
+.activo-resultados {
+    opacity: 1;
+    visibility: visible;
+}
+
+.activo-overlay {
+    display: flex;
+}
+
+.dirFlexCol {
+    flex-direction: column;
+}
+
+.dirFlexRow {
+    flex-direction: row;
+}
+
+.textAlignCenter {
+    text-align: center;
+}
+
+.textAlignJustified {
+    text-align: justify;
+}
+
+.textAlignRight {
+    text-align: right;
+}
+
+.textAlignLeft {
+    text-align: left;
+}
+
+/* Estilos globales para inputs */
+.inpt-global-style {
+    border-bottom: 2px solid black;
+    outline: none;
+    text-indent: 10px;
+}
+
+.inpt-global-style:focus {
+    border-bottom: 2px solid black;
+    outline: none;
+}
+
+.inpt-global-style::placeholder {
+    color: darkgray;
+}
+
+/* Estilos globales para inputs con label Bonitos */
+.icono-font {
+
+}
+
+.label-bonito {
+    display: flex;
+    flex-direction: column;
+}
+
+.label-bonito label {
+    font-size: 1.15rem;
+    color: black;
+    transition: all 0.3s ease;
+}
+
+.icono-font {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 10px;
+}

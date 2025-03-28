@@ -1,0 +1,165 @@
+/* 
+    Created on : 20 set. 2024, 12:00:19
+    Author     : Lavender, Andriy, Vidal
+*/
+@import url('./style-global-classes.css');
+
+#iniciosesion {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 580px);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding-left: 10%;
+    padding-right: 7%;
+}
+
+/* Contenedor de la imagen (logo) */
+.container-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Imagen del logo */
+#logoempresa {
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Formulario */
+#formLogin {
+    padding: 20px;
+}
+
+.textoentrada {
+    border-radius: 5px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    border: 1px solid darkgray;
+    text-indent: 10px;
+}
+
+/* Botón de iniciar sesión */
+#btnIniciar {
+    margin-bottom: 10px;
+    border-radius: 33px 8px;
+    border: 0;
+    font-weight: bold;
+    color: white;
+    background: #1D71D9;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+#btnIniciar:hover {
+    background-color: #1D5AB3;
+}
+
+/* Link de recuperar contraseña */
+#recuperar a {
+    color: #000080;
+    transition: all 0.3s ease-in;
+}
+
+#recuperar a:hover {
+    color: #1e0bd0;
+}
+
+/* Botón ojo contraseña */
+#entradaContra {
+    display: flex;
+    position: relative;
+}
+
+#btnMostrarContra {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#btnMostrarContra i {
+    transition: all 0.2s ease-in;
+}
+
+#btnMostrarContra i:hover {
+    color: #1e0bd0;
+}
+
+#opacidadAzul {
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    background-color: transparent;
+    overflow: visible;
+}
+
+/* La pseudo-elipse de fondo, usando ::before */
+#opacidadAzul::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(39, 100, 184, 1);
+    z-index: 0;
+}
+
+#robotContainer {
+    position: absolute;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
+    border-radius: 87px 118px 100px 300px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Imagen del robot */
+#robotImage {
+    height: auto;
+}
+
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    #iniciosesion {
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .entradaLogin, #btnIniciar {
+        width: 100%;
+    }
+
+    #opacidadAzul {
+        display: none;
+    }
+}
+
+/* Media query para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    #logoempresa {
+        width: 150px;
+    }
+
+    .textoentrada {
+        width: 100%;
+    }
+
+    #btnMostrarContra {
+        right: 5px;
+    }
+}
