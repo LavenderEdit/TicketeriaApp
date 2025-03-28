@@ -1,0 +1,59 @@
+.dashboard-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.dashboard-options {
+    width: 250px;
+    background-color: white;
+    padding: 20px 10px;
+}
+
+.dashboard-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    margin: 10px 0;
+    background-color: white;
+    border: 1px solid #BDBDBD;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+}
+
+.dashboard-option:hover {
+    background-color: #F0F0F0;
+}
+
+.dashboard-option.active {
+    background-color: #F0F0F0;
+}
+
+.dashboard-option-text {
+    color: black;
+    font-weight: normal;
+}
+
+.arrow {
+    color: black;
+    transition: transform 0.3s;
+    position: absolute;
+    right: 15px;
+}
+
+.dashboard-option:not(.active) .arrow {
+    transform: rotate(0deg); /* flecha-derecha */
+}
+
+.dashboard-option.active .arrow {
+    transform: rotate(180deg); /* flecha-izquierda */
+}
+
+.dynamic-content {
+    flex-grow: 1;
+    background-color: #D9D9D9;
+    padding: 20px;
+    margin-left: 10px;
+}

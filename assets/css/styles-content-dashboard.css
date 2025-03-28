@@ -1,0 +1,85 @@
+.tickets-container, .sucursales-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.tickets-header, .sucursales-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.btn-new-ticket {
+    background-color: #1D5AB3;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.tickets-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ticket-item {
+    border: 1px solid #BDBDBD;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ticket-detail-item {
+    margin-bottom: 5px;
+}
+
+.status-reserved {
+    background-color: #FF6B6B;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+}
+
+.sucursales-search .search-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #BDBDBD;
+    border-radius: 4px;
+}
+
+.sucursales-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.sucursal-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #BDBDBD;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+.sucursal-icon {
+    background-color: #1D5AB3;
+    color: white;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 10px;
+}

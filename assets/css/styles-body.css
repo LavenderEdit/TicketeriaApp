@@ -1,0 +1,33 @@
+html, body {
+    overflow-x: hidden; 
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #D7D6D6;
+}
+
+/* Contenido principal */
+.main-content {
+    margin-left: 0;
+    padding: 80px 20px 20px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+/* Contenedor blanco */
+.content-container {
+    background-color: white;
+    min-height: calc(100vh - 320px);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Efecto de transición del contenido */
+#content {
+    transition: margin-left 0.3s ease-in-out;
+}
