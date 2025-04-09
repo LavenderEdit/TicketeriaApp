@@ -32,8 +32,8 @@ items.forEach(item => {
 
 
 // ------------------- Barra Lateral: Contenido
-var URLContenido = "/TickeriaApp/AG-Contenido/";
-var URLSubContenido = "/TickeriaApp/AG-Subcontenido/";
+var URLContenido = "/TicketeriaApp/AG-Contenido/";
+var URLSubContenido = "/TicketeriaApp/AG-Subcontenido/";
 
 function Contenido(tipo) {
     // Definimos la URL según el contenido que se desea cargar
@@ -126,6 +126,7 @@ function SubcontenidoDashboard(tipo) {
             $('#SubcontenidoDashboard').html('<p>Hubo un error al cargar los datos.</p>');
         }
     });
+
 }
 
 
@@ -146,6 +147,54 @@ function CargarSubcontenidoDashboardtext(button) {
     }
 }
 
+
+// ------------------- Cargar: tickets - mostrar modal editar ticket
+function CargarSubcontenidoDashboardedit(button) {
+    // Encuentra el modal por su clase o ID
+    var modal = document.querySelector('.emergent');
+
+    if (modal) {
+        // Agregar la clase 'active' al modal para hacerlo visible
+        modal.classList.add('active');
+
+        // Bloquear el scroll del body mientras el modal está activo
+        document.body.classList.add('body_locked');
+
+        console.log("Modal abierto correctamente");
+    } else {
+        console.log("No se encontró el modal.");
+    }
+}
+
+// Agregar evento al botón de cancelar para cerrar el modal
+document.getElementById('btn_cancelar').addEventListener('click', function () {
+    var modal = document.querySelector('.emergent');
+
+    if (modal) {
+        // Eliminar la clase 'active' para ocultar el modal
+        modal.classList.remove('active');
+
+        // Restaurar el estado del body
+        document.body.classList.remove('body_locked');
+
+        console.log("Modal cerrado correctamente");
+    }
+});
+
+// Agregar evento para hacer desaparecer el modal cuando se haga clic en el overlay
+document.querySelector('.overlay_emergent').addEventListener('click', function () {
+    var modal = document.querySelector('.emergent');
+
+    if (modal) {
+        // Eliminar la clase 'active' para ocultar el modal cuando se hace clic en el overlay
+        modal.classList.remove('active');
+
+        // Restaurar el estado del body
+        document.body.classList.remove('body_locked');
+
+        console.log("Modal cerrado correctamente desde el overlay");
+    }
+});
 
 // ------------------- Cargar: proyectos - mostrar modal proyectos
 function CargarSubcontenidoDashboardproyect(button) {
@@ -183,102 +232,6 @@ document.getElementById('btn_cancelar-proyecto').addEventListener('click', funct
 // Agregar evento para hacer desaparecer el modal cuando se haga clic en el overlay
 document.querySelector('.overlay_proyect').addEventListener('click', function () {
     var modal = document.querySelector('.proyect');
-
-    if (modal) {
-        // Eliminar la clase 'active' para ocultar el modal cuando se hace clic en el overlay
-        modal.classList.remove('active');
-
-        // Restaurar el estado del body
-        document.body.classList.remove('body_locked');
-
-        console.log("Modal cerrado correctamente desde el overlay");
-    }
-});
-
-// ------------------- Cargar: configuracion - mostrar modal usuarioeliminar
-function mostrarModalEliminarUsuario(button) {
-    // Encuentra el modal por su clase o ID
-    var modal = document.querySelector('.usuarioeliminar');
-
-    if (modal) {
-        // Agregar la clase 'active' al modal para hacerlo visible
-        modal.classList.add('active');
-
-        // Bloquear el scroll del body mientras el modal está activo
-        document.body.classList.add('body_locked');
-
-        console.log("Modal abierto correctamente");
-    } else {
-        console.log("No se encontró el modal.");
-    }
-}
-
-// Agregar evento al botón de cancelar para cerrar el modal
-document.getElementById('btn_cancelar-usuarioeliminar').addEventListener('click', function () {
-    var modal = document.querySelector('.usuarioeliminar');
-
-    if (modal) {
-        // Eliminar la clase 'active' para ocultar el modal
-        modal.classList.remove('active');
-
-        // Restaurar el estado del body
-        document.body.classList.remove('body_locked');
-
-        console.log("Modal cerrado correctamente");
-    }
-});
-
-// Agregar evento para hacer desaparecer el modal cuando se haga clic en el overlay
-document.querySelector('.overlay_usuarioeliminar').addEventListener('click', function () {
-    var modal = document.querySelector('.usuarioeliminar');
-
-    if (modal) {
-        // Eliminar la clase 'active' para ocultar el modal cuando se hace clic en el overlay
-        modal.classList.remove('active');
-
-        // Restaurar el estado del body
-        document.body.classList.remove('body_locked');
-
-        console.log("Modal cerrado correctamente desde el overlay");
-    }
-});
-
-// ------------------- Cargar: configuracion - mostrar modal usuarioactualizar
-function mostrarModalActualizarUsuario(button) {
-    // Encuentra el modal por su clase o ID
-    var modal = document.querySelector('.usuarioactualizar');
-
-    if (modal) {
-        // Agregar la clase 'active' al modal para hacerlo visible
-        modal.classList.add('active');
-
-        // Bloquear el scroll del body mientras el modal está activo
-        document.body.classList.add('body_locked');
-
-        console.log("Modal abierto correctamente");
-    } else {
-        console.log("No se encontró el modal.");
-    }
-}
-
-// Agregar evento al botón de cancelar para cerrar el modal
-document.getElementById('btn_cancelar-usuarioactualizar').addEventListener('click', function () {
-    var modal = document.querySelector('.usuarioactualizar');
-
-    if (modal) {
-        // Eliminar la clase 'active' para ocultar el modal
-        modal.classList.remove('active');
-
-        // Restaurar el estado del body
-        document.body.classList.remove('body_locked');
-
-        console.log("Modal cerrado correctamente");
-    }
-});
-
-// Agregar evento para hacer desaparecer el modal cuando se haga clic en el overlay
-document.querySelector('.overlay_usuarioactualizar').addEventListener('click', function () {
-    var modal = document.querySelector('.usuarioactualizar');
 
     if (modal) {
         // Eliminar la clase 'active' para ocultar el modal cuando se hace clic en el overlay
@@ -454,7 +407,12 @@ document.addEventListener('click', (event) => {
     if (!modal.contains(event.target) && !Array.from(buttons).some(btn => btn.contains(event.target))) {
         modal.classList.remove('active');  // Cerramos el modal si el clic es fuera
         buttons.forEach((button) => button.classList.remove('active'));  // Eliminamos la clase active de los botones
-        tabla.classList.remove('no-scroll'); // Quitamos la clase .no-scroll de la tabla cuando el modal se cierra
+    
+        // Verificamos si la tabla existe antes de intentar modificar su classList
+        if (tabla) {
+            tabla.classList.remove('no-scroll'); // Quitamos la clase .no-scroll de la tabla cuando el modal se cierra
+        }
+    
     }
 });
 
@@ -484,3 +442,146 @@ function CargarSubcontenidoDashboardeditModal(button) {
 
 }
 
+// ------------------- Cargar: configuracion - mostrar modal usuarioeliminar
+function mostrarModalEliminarUsuario(button) {
+    // Encuentra el modal por su clase o ID
+    var modal = document.querySelector('.usuarioeliminar');
+
+    if (modal) {
+        // Agregar la clase 'active' al modal para hacerlo visible
+        modal.classList.add('active');
+
+        // Bloquear el scroll del body mientras el modal está activo
+        document.body.classList.add('body_locked');
+
+        console.log("Modal abierto correctamente");
+    } else {
+        console.log("No se encontró el modal.");
+    }
+}
+
+// Agregar evento al botón de cancelar para cerrar el modal
+document.getElementById('btn_cancelar-usuarioeliminar').addEventListener('click', function () {
+    var modal = document.querySelector('.usuarioeliminar');
+
+    if (modal) {
+        // Eliminar la clase 'active' para ocultar el modal
+        modal.classList.remove('active');
+
+        // Restaurar el estado del body
+        document.body.classList.remove('body_locked');
+
+        console.log("Modal cerrado correctamente");
+    }
+});
+
+// Agregar evento para hacer desaparecer el modal cuando se haga clic en el overlay
+document.querySelector('.overlay_usuarioeliminar').addEventListener('click', function () {
+    var modal = document.querySelector('.usuarioeliminar');
+
+    if (modal) {
+        // Eliminar la clase 'active' para ocultar el modal cuando se hace clic en el overlay
+        modal.classList.remove('active');
+
+        // Restaurar el estado del body
+        document.body.classList.remove('body_locked');
+
+        console.log("Modal cerrado correctamente desde el overlay");
+    }
+});
+
+// ------------------- Cargar: configuracion - mostrar modal usuarioactualizar
+function mostrarModalActualizarUsuario(button) {
+    // Encuentra el modal por su clase o ID
+    var modal = document.querySelector('.usuarioactualizar');
+
+    if (modal) {
+        // Agregar la clase 'active' al modal para hacerlo visible
+        modal.classList.add('active');
+
+        // Bloquear el scroll del body mientras el modal está activo
+        document.body.classList.add('body_locked');
+
+        console.log("Modal abierto correctamente");
+    } else {
+        console.log("No se encontró el modal.");
+    }
+}
+
+// Agregar evento al botón de cancelar para cerrar el modal
+document.getElementById('btn_cancelar-usuarioactualizar').addEventListener('click', function () {
+    var modal = document.querySelector('.usuarioactualizar');
+
+    if (modal) {
+        // Eliminar la clase 'active' para ocultar el modal
+        modal.classList.remove('active');
+
+        // Restaurar el estado del body
+        document.body.classList.remove('body_locked');
+
+        console.log("Modal cerrado correctamente");
+    }
+});
+
+// Agregar evento para hacer desaparecer el modal cuando se haga clic en el overlay
+document.querySelector('.overlay_usuarioactualizar').addEventListener('click', function () {
+    var modal = document.querySelector('.usuarioactualizar');
+
+    if (modal) {
+        // Eliminar la clase 'active' para ocultar el modal cuando se hace clic en el overlay
+        modal.classList.remove('active');
+
+        // Restaurar el estado del body
+        document.body.classList.remove('body_locked');
+
+        console.log("Modal cerrado correctamente desde el overlay");
+    }
+});
+
+// ------------------- Cargar: tickets - mostrar modal editar ticket
+function CargarSubcontenidoDashboardedit(button) {
+    // Encuentra el modal por su clase o ID
+    var modal = document.querySelector('.emergent');
+    
+    if (modal) {
+        // Agregar la clase 'active' al modal para hacerlo visible
+        modal.classList.add('active');
+
+        // Bloquear el scroll del body mientras el modal está activo
+        document.body.classList.add('body_locked');
+        
+        console.log("Modal abierto correctamente");
+    } else {
+        console.log("No se encontró el modal.");
+    } 
+}
+
+// Agregar evento al botón de cancelar para cerrar el modal
+document.getElementById('btn_cancelar').addEventListener('click', function() {
+    var modal = document.querySelector('.emergent');
+    
+    if (modal) {
+        // Eliminar la clase 'active' para ocultar el modal
+        modal.classList.remove('active');
+
+        // Restaurar el estado del body
+        document.body.classList.remove('body_locked');
+
+        console.log("Modal cerrado correctamente");
+    }
+});
+
+// Agregar evento para hacer desaparecer el modal cuando se haga clic en el overlay
+document.querySelector('.overlay_emergent').addEventListener('click', function() {
+    var modal = document.querySelector('.emergent');
+    
+    if (modal) {
+        // Eliminar la clase 'active' para ocultar el modal cuando se hace clic en el overlay
+        modal.classList.remove('active');
+        
+        // Restaurar el estado del body
+        document.body.classList.remove('body_locked');
+        
+        console.log("Modal cerrado correctamente desde el overlay");
+    }
+});

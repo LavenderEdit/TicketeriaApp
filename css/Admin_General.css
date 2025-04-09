@@ -29,7 +29,7 @@ a{text-decoration: none;}
 }
 
 .first_body.active {left: 0; 
-  box-shadow: 5px 0px 5px 30px #303030a0;
+  box-shadow: 3px 0px 5px 30px #3030303e;
 }
 
 .second_body.active { width: calc(100vw - 250px); transform: translateX(250px);}
@@ -387,7 +387,49 @@ main {
 .file-dashboard-sucursales_container_second-Content{width: 100%;}
 .file-dashboard-sucursales_container_second-row_container{display: flex; width: 100%;}
 .file-dashboard-sucursales_container_second-row_container_buttons{ display: grid; grid-template-columns: repeat(3,1fr); gap: 1em; font-size: 0.7em;
-    width: 100%; justify-items: start; align-items: center; max-height: 30vh; overflow-y: auto;} /* ------------------------*/
+    width: 100%; justify-items: start; align-items: center; max-height: 30vh; overflow-y: auto; padding-right: 3px;} /* ------------------------*/
+/* Personalizar el thumb (parte movil del scrollbar) */
+.file-dashboard-sucursales_container_second-row_container_buttons::-webkit-scrollbar-thumb {
+  background-color: #1D5AB3;
+  border-radius: 10px;
+}
+
+/* Personalizar el tamaño del scrollbar */
+.file-dashboard-sucursales_container_second-row_container_buttons::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Cuando haya un scroll visible, aplica un padding-right para mover el contenido */
+.file-dashboard-sucursales_container_second-row_container_buttons::-webkit-scrollbar-thumb:vertical {
+  background-color: #1D5AB3;
+}
+
+/* Detecta si hay scroll y aplica el padding-right para mover el contenido */
+.file-dashboard-sucursales_container_second-row_container_buttons {
+  padding-right: 0;
+}
+
+.file-dashboard-sucursales_container_second-row_container_buttons::-webkit-scrollbar {
+  width: 8px;
+}
+
+.file-dashboard-sucursales_container_second-row_container_buttons::-webkit-scrollbar-track {
+  background-color: #D9D9D9;
+  border-radius: 10px;
+}
+
+/* Si el contenido desborda (hay scroll), agrega el padding para mover el contenido */
+.file-dashboard-sucursales_container_second-row_container_buttons::-webkit-scrollbar-thumb {
+  background-color: #1D5AB3; 
+  border-radius: 10px;
+}
+
+.file-dashboard-sucursales_container_second-row_container_buttons {
+  padding-right: 10px; /* Esto mueve el contenido a la izquierda */
+}
+
+
+
 
 
 .file-dashboard-sucursales_container_second-row_container_buttons span{width: 2em; height: 2em; text-align: center; 
@@ -435,7 +477,7 @@ main {
 
 /* ----------------------------------- contenido del AJAX / Mis tickets*/
 .tickets_third-row{
-  padding: 2%; background-color: #D9D9D9; justify-content: center; align-items: center;
+  padding: 2%; background-color: #D9D9D9; justify-content: center;
 }
 /*Tabla: Scroll*/
 .tickets_third-row_content-data {
@@ -606,17 +648,18 @@ main {
 .file-dashborad-miembros_first-row{width: 100%; font-size: 0.8em; color: #989898; border-bottom: 2px solid #E8DEF8; padding-bottom: 5px;}
 
 .file-dashborad-miembros_second-row_content{
-    padding: 2%;
+    padding: 0 2%;
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 20px;
     max-height: 33vh; 
     overflow-y: auto;
     padding-right: 10px;
+    margin-top: 2%;
 }
 
 .file-dashborad-miembros_second-row_content::-webkit-scrollbar {
-    width: 5px;
+    width: 8px;
 }
 
 .file-dashborad-miembros_second-row_content::-webkit-scrollbar-track {
@@ -759,10 +802,6 @@ main {
   margin-bottom: 5%;
 }
 
-textarea {
-  resize: none; 
-  min-height: 120px;
-}
 
 .Btn-proyecto{align-items: center; padding: 10px 2em; display: flex; background-color: #007AFF; color: white; border-radius: 5px; border: none; cursor: pointer;
   &:hover{background-color: #004dc0;}}
@@ -868,30 +907,25 @@ textarea {
   font-family: "Montserrat"; 
   margin-bottom: 5%;
 }
+.box_pusuarioeliminar_content-imput_button{width: 100%;}
 
-textarea {
-  resize: none; 
-  min-height: 120px;
+.box_usuarioeliminar_content-imput_button_content {
+  display: flex; gap: 5px;
+  justify-content: end;
 }
 
-.Btn-usuarioeliminar{align-items: center; padding: 10px 2em; display: flex; background-color: #007AFF; color: white; border-radius: 5px; border: none; cursor: pointer;
-  &:hover{background-color: #004dc0;}}
-.Btn-usuarioeliminar i{padding-left: 10px;}
-
-.box_usuarioeliminar_content-imput_button {
-  display: flex; 
-  justify-content: end;
+.box_usuarioeliminar_content-imput_text_message{
+  white-space: normal; color: #6a6a6a; font-size: 0.9em; padding-bottom: 3%;
 }
 
 .box_usuarioeliminar_content-imput_button_content button {
   padding: 3% 20px; 
   color: white; 
-  cursor: pointer;
+  cursor: pointer; border: none; outline: none;
 }
 
 #btn_cancelar-usuarioeliminar {
   background-color: #ff0000; 
-  border: 1px solid #a40000; 
 }
 
 #btn_cancelar-usuarioeliminar:hover {
@@ -900,7 +934,6 @@ textarea {
 
 #btn_aceptar-usuarioeliminar {
   background-color: #1D5AB3; 
-  border: 1px solid #00388b; 
 }
 
 #btn_aceptar-usuarioeliminar:hover {
@@ -939,11 +972,10 @@ textarea {
 }  
 
 .box_usuarioactualizar{
-  width: min(30%); 
   height: auto; 
   position: relative; 
   background-color: white; 
-  padding: 1% 3%; 
+  padding: 2% 4%; 
   border-radius: 15px; 
   z-index: 2001;
 }  
@@ -979,14 +1011,6 @@ textarea {
   margin-bottom: 5%;
 }
 
-textarea {
-  resize: none; 
-  min-height: 120px;
-}
-
-.Btn-usuarioactualizar{align-items: center; padding: 10px 2em; display: flex; background-color: #007AFF; color: white; border-radius: 5px; border: none; cursor: pointer;
-  &:hover{background-color: #004dc0;}}
-.Btn-usuarioactualizar i{padding-left: 10px;}
 
 .box_usuarioactualizar_content-imput_button {
   display: flex; 
@@ -997,11 +1021,11 @@ textarea {
   padding: 3% 20px; 
   color: white; 
   cursor: pointer;
+  border: none; outline: none;
 }
 
 #btn_cancelar-usuarioactualizar {
-  background-color: #ff0000; 
-  border: 1px solid #a40000; 
+  background-color: #ff0000;
 }
 
 #btn_cancelar-usuarioactualizar:hover {
@@ -1010,7 +1034,6 @@ textarea {
 
 #btn_aceptar-usuarioactualizar {
   background-color: #1D5AB3; 
-  border: 1px solid #00388b; 
 }
 
 #btn_aceptar-usuarioactualizar:hover {
@@ -1023,8 +1046,52 @@ textarea {
 
 
 .configuracion-content-main_third-row_second-row{padding: 3px;}
-.configuracion-content_lista-usuarios{width: 100%; max-height: 30vh;
+
+.configuracion-content_lista-usuarios{width: 100%; max-height: 30vh; padding-left: 5px;
 overflow-y: auto;}
+
+/* ---------------------------------  Diseño de Scroll (Contenido Ticket)  */
+
+/* Personalizar el thumb (parte movil del scrollbar) */
+.configuracion-content_lista-usuarios::-webkit-scrollbar-thumb {
+  background-color: #1D5AB3;
+  border-radius: 10px;
+}
+
+/* Personalizar el tamaño del scrollbar */
+.configuracion-content_lista-usuarios::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Cuando haya un scroll visible, aplica un padding-right para mover el contenido */
+.configuracion-content_lista-usuarios::-webkit-scrollbar-thumb:vertical {
+  background-color: #1D5AB3;
+}
+
+/* Detecta si hay scroll y aplica el padding-right para mover el contenido */
+.configuracion-content_lista-usuarios {
+  padding-right: 0;
+}
+
+.configuracion-content_lista-usuarios::-webkit-scrollbar {
+  width: 8px;
+}
+
+.configuracion-content_lista-usuarios::-webkit-scrollbar-track {
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+/* Si el contenido desborda (hay scroll), agrega el padding para mover el contenido */
+.file-dashborad-tickets::-webkit-scrollbar-thumb {
+  background-color: #1D5AB3; 
+  border-radius: 10px;
+}
+
+.file-dashborad-tickets {
+  padding-right: 10px; /* Esto mueve el contenido a la izquierda */
+}
+
 
 
 
@@ -1072,6 +1139,35 @@ overflow-y: auto;}
 }
 .Modal-ActualizarUsuarios{background-color: #dc3545; color: #fff; &:hover{background-color: #9b0e1c;}}
 .Modal-ElimianrUsuarios{background-color: #007bff; color: #fff; &:hover{background-color: #0c5bae; }}
+
+
+
+/*  Modal: Venatana*/
+.emergent { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; 
+  align-items: center; justify-content: center; visibility: hidden; opacity: 0; font-family: "Montserrat";
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; z-index: 2000; }  
+.emergent.active { visibility: visible; opacity: 1; }  
+.overlay_emergent { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); }  
+.box_emergent {width: min(30%); height: auto; position: relative; background-color: white; padding: 1% 3%; border-radius: 15px; z-index: 2001;}  
+.body_locked { overflow: hidden; pointer-events: none; }  
+.body_locked .emergent { pointer-events: auto; }
+
+.box_emergent h1 {text-align: center; font-size: 1.5em; text-decoration: underline; margin-bottom: 5%;}
+.box_emergent_content-imput_text p{font-size: 1em; margin-bottom: 2%;}
+
+.box_emergent_content-imput_text select,
+.box_emergent_content-imput_text option,
+.box_emergent_content-imput_text textarea, 
+.box_emergent_content-imput_text input{width: 100%; padding: 2% 3%; outline: none; font-size: 0.8em; font-family: "Montserrat"; margin-bottom: 5%;}
+
+textarea{resize: none; min-height: 120px;}
+
+.box_emergent_content-imput_button{display: flex; justify-content: end;}
+.box_emergent_content-imput_button_content button{padding: 3% 20px; color: white; cursor: pointer;}
+
+#btn_cancelar{background-color: #ff0000; border: 1px solid #a40000; &:hover{background-color: #ff5151;}} 
+#btn_aceptar{background-color: #1D5AB3; border: 1px solid #00388b; &:hover{background-color: #589bff;}}
+
 
 
 @media (max-width: 1100px) {

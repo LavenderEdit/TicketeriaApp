@@ -79,7 +79,45 @@
     </div>
 
 
-    
+    <!-- Modal de edición -->
+    <div class="emergent">
+        <div class="overlay_emergent"></div>
+        <div class="box_emergent" id="content_edition">
+            <div class="box_emergent_content">
+                <h1>EDITAR TICKET</h1>
+                <div class="box_emergent_content-imput">
+                    <div class="box_emergent_content-imput_text">
+                        <div class="box_emergent_content-imput_text_codigo">
+                            <p>Nombre del ticket:</p>
+                            <input type="text" name="nombre" id="#" placeholder="Código de Ticket">
+                        </div>
+                        <div class="box_emergent_content-imput_text_fecha">
+                            <p>Fecha</p>
+                            <input type="date" name="fecha">
+                        </div>
+                        <div class="box_emergent_content-imput_text_estatus">
+                            <p>Estatus</p>
+                            <select name="status">
+                                <option>option1</option>
+                                <option>option2</option>
+                                <option>option3</option>
+                            </select>
+                        </div>
+                        <div class="box_emergent_content-imput_text_descripcion">
+                            <p>Descripción</p>
+                            <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí..."></textarea>
+                        </div>
+                    </div>
+                    <div class="box_emergent_content-imput_button">
+                        <div class="box_emergent_content-imput_button_content">
+                            <button type="button" id="btn_cancelar">Cancelar</button>
+                            <button type="button" id="btn_aceptar">Actualizar</button>
+                        </div>        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Modal -->
     <div class="Modal-edicion">
         <div class="box_Modal-edicion">
@@ -119,15 +157,14 @@
                 <h1>Eliminar Usuario</h1>
                 <div class="box_usuarioeliminar_content-imput">
                     <div class="box_usuarioeliminart_content-imput_text">
-                        <div class="box_usuarioeliminar_content-imput_text_codigo">
-                            <p>Nombre del proyecto:</p>
-                            <input type="text" name="nombre" id="#" placeholder="Código de Ticket">
+                        <div class="box_usuarioeliminar_content-imput_text_message">
+                            <p>Estas Acciones son irreversibles ¿Seguro de eliminar este usuario?.</p>
                         </div>
                     </div>
                     <div class="box_pusuarioeliminar_content-imput_button">
                         <div class="box_usuarioeliminar_content-imput_button_content">
                             <button type="button" id="btn_cancelar-usuarioeliminar">Cancelar</button>
-                            <button type="button" id="btn_aceptar-usuarioeliminar">Actualizar</button>
+                            <button type="button" id="btn_aceptar-usuarioeliminar">Aceptar</button>
                         </div>        
                     </div>
                 </div>
@@ -143,14 +180,16 @@
                 <div class="box_usuarioactualizar_content-imput">
                     <div class="box_usuarioactualizar_content-imput_text">
                         <div class="box_usuarioactualizar_content-imput_text_codigo">
-                            <p>Nombre del proyecto:</p>
-                            <input type="text" name="nombre" id="#" placeholder="Código de Ticket">
+                            <p>Nombre del Usuario:</p>
+                            <input type="text" name="nombre" id="#" placeholder="Usuario">
+                            <p>Correo del Usuario:</p>
+                            <input type="text" name="nombre" id="#" placeholder="Correo">
                         </div>
                     </div>
                     <div class="box_usuarioactualizar_content-imput_button">
                         <div class="box_usuarioactualizar_content-imput_button_content">
                             <button type="button" id="btn_cancelar-usuarioactualizar">Cancelar</button>
-                            <button type="button" id="btn_aceptar-usuarioactualizar">Actualizar</button>
+                            <button type="button" id="btn_aceptar-usuarioactualizar">Aceptar</button>
                         </div>        
                     </div>
                 </div>
