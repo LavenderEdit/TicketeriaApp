@@ -1,0 +1,62 @@
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    left: -300px;
+    top: 0;
+    height: 100%;
+    width: 300px;
+    background-color: #1D5AB3;
+    padding-top: 140px;
+    transition: left 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: visible;
+}
+
+.sidebar.open {
+    left: 0;
+    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Menú (estado base) */
+.menu-item {
+    font-family: 'ABeeZee', sans-serif;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* Iconos de los elementos (Dasboard, Mis tickets y configuraciones) */
+.menu-item img {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+}
+
+.menu-item:hover {
+    background-color: #17488A;
+}
+
+.sidebar.open .menu-item.active {
+    background: white;
+    color: #1D5AB3;
+    width: 311px;
+    height: 80px;
+    padding: 0 20px;
+    clip-path: polygon(0 0, 85% 0, 95.5% 50%, 85% 100%, 0 100%);
+    z-index: 2;
+}
+
+.sidebar.open .menu-item.active::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    background: white;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    z-index: 3;
+}

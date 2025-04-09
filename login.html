@@ -4,11 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticketeria App</title>
+    <title>Jhardsystex - Login</title>
+    <meta name="description"
+        content="Sistema de ticketería innovador para la gestión eficiente de soporte técnico, reclamos y garantías. Automatiza la atención al cliente con tecnología de punta, respaldado por años de experiencia en soluciones TI especializadas.">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style-login.css">
+    <link rel="icon" href="./recursos/iconos/icon-robot.webp" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/2185a48098.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <div id="iniciosesion">
+        <div class="container-image">
+            <img src="./recursos/logos/icon-logo.webp" alt="logo_keyfacil" id="logoempresa">
+        </div>
+        <form action="./php/login.php" id="formLogin" method="POST">
+            <div class="entradaLogin label-bonito">
+                <div class="icono-font">
+                    <i class="fa-solid fa-user"></i>
+                    <label for="correo">Usuario</label>
+                </div>
+                <input type="email" class="textoentrada inpt-global-style" id="correo" name="correo"
+                    placeholder="Usuario" required>
+            </div>
+            <div class="entradaLogin label-bonito" id="entradaContra">
+                <div class="icono-font">
+                    <i class="fa-solid fa-lock"></i>
+                    <label for="contra">Contraseña</label>
+                </div>
+                <div class="pwd-container">
+                    <input type="password" class="textoentrada inpt-global-style contraClass" id="contra" name="contra"
+                        placeholder="Contraseña" minlength="6" maxlength="12" pattern=".{6,12}" required>
+                    <button type="button" id="btnMostrarContra" class="btn-show-container">
+                        <i class="fa-regular fa-eye iconoOjoAbierto"></i>
+                        <i style="display: none;" class="fa-regular fa-eye-slash iconoOjoCerrado"></i>
+                    </button>
+                </div>
+            </div>
+            <button type="submit" id="btnIniciar">
+                Iniciar Sesión
+            </button>
+        </form>
+        <div id="recuperar">
+            <a href="">¿Olvido su contraseña?</a>
+        </div>
+    </div>
+
+    <div id="opacidadAzul">
+        <div id="robotContainer">
+            <img src="./recursos/iconos/icon-robot.webp" alt="Robot Icon" id="robotImage">
+        </div>
+    </div>
+
+    <div class="overlay">
         <!-- Modales de mensajes interactivos -->
         <!-- Modal de exito -->
         <div id="successModal" class="dialog hidden">
@@ -80,7 +128,9 @@
                 </div>
             </div>
         </div>
-        <script type="module" src="./assets/js/script.js"></script>
+    </div>
+
+    <script type="module" src="./assets/js/script.js"></script>
 </body>
 
 </html>

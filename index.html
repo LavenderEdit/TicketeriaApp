@@ -1,12 +1,49 @@
-<!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticketeria App</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Dashboard</title>
+    <meta name="description"
+        content="Sistema de ticketería innovador para la gestión eficiente de soporte técnico, reclamos y garantías. Automatiza la atención al cliente con tecnología de punta, respaldado por años de experiencia en soluciones TI especializadas.">
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style-index.css?v=1">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" href="./recursos/iconos/icon-robot.webp" type="image/x-icon">
 </head>
+
 <body>
-    <script type="module" src="./js/script.js"></script>
+    <!-- Sidebar -->
+    <div class="sidebar menu-sidebar" id="sidebar">
+        <a href="#" class="menu-item active"><img src="./recursos/logos/Home.webp" alt="Dashboard" class="icon">
+            Dashboard</a>
+        <a href="#" class="menu-item"><img src="./recursos/logos/Check.webp" alt="Mis Tickets" class="icon"> Mis
+            Tickets</a>
+        <a href="#" class="menu-item"><img src="./recursos/logos/Settings.webp" alt="Configuración" class="icon">
+            Configuración</a>
+    </div>
+
+    <div id="content">
+        <!-- Header -->
+        <header class="header">
+            <!-- MenuToggle -->
+            <button id="menuToggle" class="menu-button" onclick="toggleSidebar()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <!-- Logo -->
+            <div class="profile-icon">
+                <img src="./recursos/logos/profile.webp" alt="Perfil">
+            </div>
+        </header>
+        <!-- Main (Body) -->
+        <main class="main-content" id="main-content">
+            <!-- aqui se cargara el contenido -->
+        </main>
+    </div>
+    <!-- Scripts -->
+    <script type="module" src="./assets/js/script.js"></script>
 </body>
+
 </html>
