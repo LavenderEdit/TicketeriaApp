@@ -1,49 +1,50 @@
 <?php
 
-class Conexion
-{
-    private static $instance = null;
-    private $pdo;
+namespace TicketingSystem\Conexion;
 
-    private function __construct()
-    {
-        $config = require __DIR__ . './conexion/config.php';
+use PDO;
+use PDOException;
 
+class Conexion {
+    private $servername = "sv-eddy.mysql.database.azure.com";
+    private $username = "BDG3";
+    private $password = "BD-G3-2025";
+    private $dbname = "TicketingSystemDB";
+    private $conn;
+
+    public function __construct() {
         try {
-            $dsn = "mysql:host={$config['DB_HOST']};dbname={$config['DB_NAME']};charset=utf8mb4";
-            $this->pdo = new PDO($dsn, $config['DB_USER'], $config['DB_PASS']);
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-            echo 'Si me conecte!!';
-        } catch (PDOException $e) {
-            throw new Exception("Error al conectar a la base de datos: " . $e->getMessage());
+            // Ruta al certificado SSL
+            $ssl_cert = "../ssl/DigiCertGlobalRootCA.crt.pem";
+
+            // Configuración de la conexión con SSL
+            $options = [
+                PDO::MYSQL_ATTR_SSL_CA => $ssl_cert,
+                PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => true, // Puedes desactivar la verificación del certificado cambiando a false(opcional)
+            ];
+
+            // Crear la conexión PDO con SSL
+            $this->conn = new PDO(
+                "mysql:host=$this->servername;dbname=$this->dbname",
+                $this->username,
+                $this->password,
+                $options
+            );
+
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            // echo "Conexión exitosa";
+        } catch(PDOException $e) {
+            error_log("Error en la conexión: " . $e->getMessage());
+            echo "Hubo un error al conectar con la base de datos. Por favor, inténtalo de nuevo más tarde.";
         }
     }
 
-    public static function getInstance()
-    {
-        if (self::$instance === null) {
-            self::$instance = new Conexion();
-        }
-        return self::$instance;
+    public function getConnection() {
+        return $this->conn;
     }
 
-    public function getConnection()
-    {
-        return $this->pdo;
-    }
-
-    public function closeConnection()
-    {
-        $this->pdo = null;
-        self::$instance = null;
-    }
-
-    private function __clone()
-    {
-    }
-
-    private function __wakeup()
-    {
+    public function closeConnection() {
+        $this->conn = null;
     }
 }
+?>

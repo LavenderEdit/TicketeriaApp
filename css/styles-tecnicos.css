@@ -1,0 +1,419 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Estilos del encabezado */
+#menu-header {
+    background-color: #1d5ab3;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 50;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#menu-header h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+#toggle-menu {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Estilos del menú lateral */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    background-color: #1d5ab3;
+    color: white;
+    padding: 20px 0;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    z-index: 40;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin: 5px 0;
+}
+
+.sidebar li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.sidebar li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar li.active a {
+    background-color: white;
+    color: #1d5ab3;
+    font-weight: 500;
+    border-radius: 0 4px 4px 0;
+}
+
+.sidebar i {
+    width: 24px;
+    text-align: center;
+    margin-right: 12px;
+    font-size: 1.1rem;
+}
+
+/* Contenido principal */
+.main-content {
+    flex: 1;
+    padding: 25px;
+    margin-top: 60px;
+    transition: margin-left 0.3s ease;
+    width: 100%;
+}
+
+.menu-open .main-content {
+    margin-left: 250px;
+}
+
+/* Estilos para el título principal */
+.main-content header h1 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Filtros */
+.filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filters input[type="text"] {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.filters select {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-width: 180px;
+    font-size: 0.9rem;
+    background-color: white;
+}
+
+/* Estilos para los contenedores */
+.bg-white {
+    background-color: white;
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.shadow-lg {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.border {
+    border-width: 1px;
+}
+
+.border-gray-300 {
+    border-color: #e5e7eb;
+}
+
+/* Botones */
+button {
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.space-x-3 > * + * {
+    margin-left: 0.75rem;
+}
+
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.bg-gray-300 {
+    background-color: #e5e7eb;
+}
+
+.text-gray-800 {
+    color: #1f2937;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+/* Divisores */
+.border-t {
+    border-top-width: 1px;
+}
+
+.border-black-200 {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.my-2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ========== [MEJORAS PARA LA TABLA] ========== */
+
+/* Estructura base mejorada */
+.tech-table {
+    width: 100%;
+    border-collapse: separate; /* Cambiado para permitir sombras */
+    border-spacing: 0;
+    font-size: 0.9rem;
+    background-color: white;
+    position: relative;
+}
+
+/* Celdas con transición suave */
+.tech-table th, .tech-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ===== [EFECTO HOVER CON ZOOM OPTIMIZADO] ===== */
+.tech-table tbody tr {
+    position: relative;
+    cursor: pointer;
+    transition: 
+        transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1),
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+    transform-origin: center left;
+    backface-visibility: hidden; /* Elimina flickering */
+    will-change: transform; /* Optimiza la animación */
+}
+
+.tech-table tbody tr:hover {
+    background-color: #e9f5ff;
+    transform: perspective(1000px) scaleX(1.02); /* Zoom más estable que scale() */
+    box-shadow: 0 4px 15px rgba(0, 98, 204, 0.15);
+    z-index: 5; /* Asegura que la sombra se vea sobre otras filas */
+}
+
+/* Ajustes para el contenido de celdas */
+.tech-table tbody tr:hover td {
+    color: #1a4a8a;
+    position: relative;
+}
+
+/* Botones durante hover */
+.tech-table tbody tr:hover .btn-action {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== [VERSIÓN RESPONSIVE] ===== */
+@media (max-width: 768px) {
+    .tech-table tbody tr:hover {
+        transform: none; /* Desactiva zoom en móviles */
+        background-color: #e9f5ff;
+        box-shadow: 0 2px 8px rgba(0, 98, 204, 0.1);
+    }
+}
+
+/* Botones de acción con mejor hover */
+.btn-action {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-action.edit {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-action.delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-action:hover {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto "pulse" para llamar la atención */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(29, 90, 179, 0.4); }
+    70% { box-shadow: 0 0 0 8px rgba(29, 90, 179, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(29, 90, 179, 0); }
+}
+
+/* Highlight para la fila seleccionada (opcional) */
+.tech-table tr.selected {
+    background-color: #e6f0ff !important;
+    animation: pulse 1.5s infinite;
+}
+
+/* ========== [RESPONSIVE] ========== */
+@media (max-width: 768px) {
+    /* Efectos más sutiles en móviles */
+    .tech-table tbody tr:hover {
+        transform: none;
+        box-shadow: 0 2px 6px rgba(29, 90, 179, 0.1);
+    }
+    
+    .tech-table tbody tr:hover td:first-child {
+        border-left-width: 2px;
+    }
+    
+    .btn-action:hover {
+        transform: scale(1.05);
+    }
+}
+
+@media (max-width: 576px) {
+    /* Ajustes para pantallas muy pequeñas */
+    .tech-table {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .tech-table tbody tr:hover {
+        background-color: #f0f7ff;
+    }
+}
+
+/* ----- VERSIÓN FINAL CORREGIDA ----- */
+/* Reemplaza las reglas existentes del .sidebar li.active */
+.sidebar li.active {
+    position: relative;
+    background: white;
+    border-radius: 4px 0 0 4px;
+    margin-right: 0;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.sidebar li.active a {
+    color: #1d5ab3 !important;
+    font-weight: 600;
+    position: relative;
+}
+
+.sidebar li.active::before {
+    content: '';
+    position: absolute;
+    right: -30px;
+    top: 0;
+    height: 100%;
+    width: 30px;
+    background: white;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    z-index: 3;
+    box-shadow: 3px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+    box-shadow: 9px 0 45px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 40;
+}
+
+.sidebar::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
