@@ -86,7 +86,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE ObtenerClientesTecnicos()
+CREATE PROCEDURE sp_Obtener_usuario_clientes_tecnicos()
 BEGIN
     SELECT 
         u.nombre, 
